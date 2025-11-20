@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student | Laundry Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .tab-btn {
+      transition: all 0.2s ease-in-out;
+    }
+    .tab-btn:hover {
+      transform: scale(1.05);
+    }
+    .fade-in {
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen font-sans">
+  <!-- Navbar -->
+  <nav class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold tracking-wide">🧺 Laundry Dashboard</h1>
+      <div class="flex items-center gap-6">
+        <span id="welcomeText" class="text-lg font-semibold">Welcome, </span>
+        <a href="/api/auth/logout" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg shadow-md">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Tabs -->
+  <div class="container mx-auto mt-6 px-4">
+    <div class="flex gap-4 mb-6 justify-center">
+      <button id="tab-wash" class="tab-btn bg-blue-600 text-white px-5 py-2 rounded-lg shadow-md">Wash Now</button>
+      <button id="tab-progress" class="tab-btn bg-gray-200 text-gray-800 px-5 py-2 rounded-lg shadow-md">See Progress</button>
+      <button id="tab-history" class="tab-btn bg-gray-200 text-gray-800 px-5 py-2 rounded-lg shadow-md">History</button>
+    </div>
+
+    <!-- Section content -->
+    <div id="section-content" class="fade-in"></div>
+  </div>
+
+  <script type="module" src="js/student/dashboard.js"></script>
+</body>
+</html>
